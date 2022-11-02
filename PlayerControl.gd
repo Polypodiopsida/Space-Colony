@@ -12,7 +12,7 @@ func find_by_class(node: Node, className: String, result: Array) -> void:
 		find_by_class(child, className, result)
 		
 func _ready():
-	find_by_class(colony, "Camera", Cameras)
+	find_by_class(colony, "ClippedCamera", Cameras)
 	print(Cameras)
 	
 func _process(delta):
@@ -25,10 +25,10 @@ func _process(delta):
 		switch_cameras(Cameras, n)
 
 func switch_cameras(camList : Array, n : int):
-	if n == 1 && currentCamera < camList.size():
+	if n == 1 && currentCamera < camList.size() -1:
 		currentCamera += 1
 		camList[currentCamera].set_current(true)
-	elif n == 1 && currentCamera >= camList.size():
+	elif n == 1 && currentCamera == camList.size() - 1:
 		currentCamera = 0
 		camList[currentCamera].set_current(true)
 	
@@ -36,9 +36,9 @@ func switch_cameras(camList : Array, n : int):
 		currentCamera -= 1
 		camList[currentCamera].set_current(true)
 	if n == -1 && currentCamera < 0:
-		currentCamera = camList.size()
+		currentCamera = camList.size() - 1
 		camList[currentCamera].set_current(true)
 	
 	
 	print(currentCamera)
-	print(camList)
+	print(camList[currentCamera])
