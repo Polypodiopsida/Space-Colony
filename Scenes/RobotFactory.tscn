@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/RobotFactoryControl.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Camera.tscn" type="PackedScene" id=2]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="BoxShape" id=3]
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[node name="RobotFactory" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 1.89686, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Wall" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1.54432, 0, 0, 0, 1, 0, 0, 0, 0.0793334, -0.527952, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody/Wall"]
+mesh = SubResource( 2 )
+
+[node name="Wall2" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1.54432, 0, 0, 0, 1, 0, 0, 0, 0.0793334, -0.527952, 0, 3.0955 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody/Wall2"]
+mesh = SubResource( 2 )
+
+[node name="Wall3" type="CollisionShape" parent="StaticBody"]
+transform = Transform( -8.27073e-08, 0, 0.0421975, 0, 1, 0, -1.56869, 0, -1.52921e-09, 0.965822, 0, 1.56091 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody/Wall3"]
+mesh = SubResource( 2 )
+
+[node name="Wall5" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 6.50873e-07, 1.6691, 1.10684e-08, 5.99453e-15, 2.30586e-08, -0.0800288, -1.56869, 6.91757e-08, 1.5291e-16, -0.656526, 1.03357, 1.56091 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody/Wall5"]
+transform = Transform( 1, 0, 0, 7.10543e-15, 1, -3.52428e-24, 6.77626e-21, -1.13687e-13, 1, 0, 0, 0 )
+mesh = SubResource( 2 )
+
+[node name="Wall6" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 6.50873e-07, 1.6691, 1.10684e-08, 5.99453e-15, 2.30586e-08, -0.0800288, -1.56869, 6.91757e-08, 1.5291e-16, -0.656763, -1.00174, 1.57315 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody/Wall6"]
+transform = Transform( 1, 0, 0, 7.10543e-15, 1, -3.52428e-24, 6.77626e-21, -1.13687e-13, 1, 0, 0, 0 )
+mesh = SubResource( 2 )
+
+[node name="ClippedCamera" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.544859, 0, 0.838528, 0, 1, 0, -0.838528, 0, -0.544859, 1.45135, 0.695311, 0.375792 )
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 0.153516, 0, 0, 0, 0.430732, 0, 0, 0, 0.153516, 0.16433, -0.497658, 1.6674 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Area"]
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="SpawnArea" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.83618, 0.144367, 1.7414 )

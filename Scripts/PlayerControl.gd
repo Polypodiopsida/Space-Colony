@@ -5,6 +5,13 @@ var Cameras = []
 
 var currentCamera = 0
 
+var commandBots = []
+var builderBots = []
+var repairBots = []
+var defenseBots = []
+var miningBots = []
+var furnacaeBots = []
+
 func find_by_class(node: Node, className: String, result: Array) -> void:
 	if node.is_class(className):
 		result.push_back(node)
