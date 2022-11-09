@@ -11,6 +11,20 @@ var repairBots = []
 var defenseBots = []
 var miningBots = []
 var furnacaeBots = []
+var botMax #The max amount of robots you can have
+
+var generators = []
+
+var electricity = 1000
+var elecMax = 1000
+var rawMetals = 1000
+var rawMax = 1000
+var refMetals = 1000
+var refMax = 1000
+var gold = 1000
+var goldMax = 1000
+var nuclearMat = 1000
+var nuclearMax = 1000
 
 func find_by_class(node: Node, className: String, result: Array) -> void:
 	if node.is_class(className):
