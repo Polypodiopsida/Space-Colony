@@ -38,4 +38,4 @@ transform = Transform( 1, 0, 0, 0, 1.8976, 0, 0, 0, 1, 0, 2, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9426, 1.02148, 0 )
 
 [node name="Generator" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6498, 4.73178, -32.1196 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6498, 1.09323, -4.68233 )

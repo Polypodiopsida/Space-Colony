@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="space-colony"
+run/main_scene="res://Scenes/TestWorld.tscn"
 config/icon="res://icon.png"
 
 [input]

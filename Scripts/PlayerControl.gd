@@ -17,7 +17,7 @@ var generators = []
 
 var electricity = 1000
 var elecMax = 1000
-var rawMetals = 1000
+var rawMaterials = 1000
 var rawMax = 1000
 var refMetals = 1000
 var refMax = 1000

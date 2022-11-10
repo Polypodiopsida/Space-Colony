@@ -6,6 +6,8 @@ var currentFOV = 90
 var ud = 0
 var lr = 0
 
+onready var ray = $RayCast
+
 func _process(delta):
 	if current:
 		if Input.is_action_pressed("cam_up") && !Input.is_action_pressed("cam_down"):
@@ -30,6 +32,15 @@ func _input(event):
 				currentFOV += 1
 			if event.button_index == BUTTON_MIDDLE:
 				currentFOV = 90
+			
+			if current:
+				if event.button_index == BUTTON_LEFT:
+					if ray.is_colliding():
+						var hit = ray.get_collider()
+						
+						print(hit)
+					else:
+						print("Nothing Hit")
 	
 func _physics_process(delta):
 	rotation_degrees.x += ud * mouseSensitivity * delta
