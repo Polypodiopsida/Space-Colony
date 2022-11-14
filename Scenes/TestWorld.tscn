@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/PlayerNode.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/ObjectScenes/RobotFactory.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Grid.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/ObjectScenes/Generator.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/Time.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Time.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/ObjectScenes/CameraPost.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=7]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -19,14 +21,14 @@ script = ExtResource( 5 )
 [node name="TestMap" type="Spatial" parent="."]
 script = ExtResource( 3 )
 
-[node name="Area" type="Area" parent="TestMap"]
+[node name="groundArea" type="Area" parent="TestMap"]
 transform = Transform( 50, 0, 0, 0, 0.05, 0, 0, 0, 50, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="TestMap/Area"]
+[node name="CollisionShape" type="CollisionShape" parent="TestMap/groundArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00207973, -0.00794125, 0.00380755 )
 shape = SubResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="TestMap/Area/CollisionShape"]
+[node name="MeshInstance" type="MeshInstance" parent="TestMap/groundArea/CollisionShape"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00153473, 1.23611, 1.03763e-05 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
@@ -39,3 +41,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9426, 1.02148, 0 )
 
 [node name="Generator" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6498, 1.09323, -4.68233 )
+
+[node name="Camera Post" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.25, 0, 0, 0, 5, 0, 0, 0, 0.25, 0, 0, 22.2919 )
+
+[node name="GUI" parent="." instance=ExtResource( 7 )]

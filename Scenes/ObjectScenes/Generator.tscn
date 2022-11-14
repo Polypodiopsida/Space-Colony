@@ -12,11 +12,62 @@ albedo_color = Color( 0.101961, 1, 0, 1 )
 [node name="Generator" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="StaticBody" type="StaticBody" parent="."]
+[node name="Area" type="Area" parent="."]
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
 shape = SubResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody/CollisionShape"]
+[node name="MeshInstance" type="MeshInstance" parent="Area/CollisionShape"]
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.207843 )
+margin_left = 11.0
+margin_top = 473.0
+margin_right = 218.0
+margin_bottom = 589.0
+
+[node name="nameLabel" type="RichTextLabel" parent="Panel"]
+margin_left = 7.0
+margin_top = 5.0
+margin_right = 74.0
+margin_bottom = 23.0
+text = "Generator"
+
+[node name="activeLabel" type="RichTextLabel" parent="Panel"]
+margin_left = 6.0
+margin_top = 38.0
+margin_right = 137.0
+margin_bottom = 54.0
+rect_pivot_offset = Vector2( -46, -103 )
+text = "Active: True"
+
+[node name="outputLabel" type="RichTextLabel" parent="Panel"]
+margin_left = 6.0
+margin_top = 59.0
+margin_right = 236.0
+margin_bottom = 75.0
+rect_pivot_offset = Vector2( -46, -103 )
+text = "Generating: "
+
+[node name="intakeLabel" type="RichTextLabel" parent="Panel"]
+margin_left = 6.0
+margin_top = 82.0
+margin_right = 205.0
+margin_bottom = 98.0
+rect_pivot_offset = Vector2( -46, -103 )
+text = "Intake:"
+
+[node name="Button" type="Button" parent="Panel"]
+margin_left = 144.0
+margin_top = 6.0
+margin_right = 202.0
+margin_bottom = 26.0
+toggle_mode = true
+pressed = true
+text = "Active"
+flat = true
+
+[connection signal="input_event" from="Area" to="." method="_on_Area_input_event"]

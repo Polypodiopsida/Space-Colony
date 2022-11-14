@@ -44,6 +44,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("camera_prev"):
 		n = -1
 		switch_cameras(Cameras, n)
+		
+	find_by_class(colony, "ClippedCamera", Cameras)
 
 func switch_cameras(camList : Array, n : int):
 	if n == 1 && currentCamera < camList.size() -1:
