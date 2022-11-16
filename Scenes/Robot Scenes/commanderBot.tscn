@@ -39,18 +39,36 @@ margin_right = 63.0
 margin_bottom = 47.0
 text = "Active"
 
+[node name="commandList" type="RichTextLabel" parent="Panel"]
+margin_left = 5.0
+margin_top = 54.0
+margin_right = 317.0
+margin_bottom = 145.0
+meta_underlined = false
+text = "Bots Commanding: "
+
 [node name="ActiveButton" type="Button" parent="Panel"]
 margin_left = 329.0
 margin_top = 6.0
 margin_right = 381.0
 margin_bottom = 26.0
+toggle_mode = true
+pressed = true
 text = "Active"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
-margin_left = 5.0
-margin_top = 54.0
-margin_right = 316.0
-margin_bottom = 159.0
-text = "Bots Commanding: "
+[node name="commandButton" type="Button" parent="Panel"]
+margin_left = 305.0
+margin_top = 39.0
+margin_right = 382.0
+margin_bottom = 59.0
+action_mode = 0
+text = "Command"
+
+[node name="taskLabel" type="RichTextLabel" parent="Panel"]
+margin_left = 6.0
+margin_top = 150.0
+margin_right = 262.0
+margin_bottom = 239.0
+text = "Current Task: "
 
 [connection signal="input_event" from="KinematicBody" to="." method="_on_KinematicBody_input_event"]

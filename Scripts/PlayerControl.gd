@@ -13,7 +13,7 @@ var miningBots = []
 var furnacaeBots = []
 var botMax #The max amount of robots you can have
 
-var generators = []
+var isCommanding
 
 var electricity = 1000
 var elecMax = 1000

@@ -74,9 +74,13 @@ func _process(delta):
 func _on_Area_input_event(camera, event, position, normal, shape_idx): #DUMBASS DON'T FORGET THAT YOU NEED TO CONNET THE AREA WITH THE RIGHT SIGNAL
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == BUTTON_LEFT && !selected:
-			print("test open")
-			selected = true
-			GUI.open_panel(guiPanel)
+			if !playerObject.isCommanding:
+				print("test open")
+				selected = true
+				GUI.open_panel(guiPanel)
+			else:
+				print("Commanding bots to run generator")
+				playerObject.isCommanding = false
 		elif event.button_index == BUTTON_LEFT && selected:
 			print("test close")
 			selected = false
