@@ -7,7 +7,7 @@ var goldCost = 10
 var nuclearMaterialCost = 10
 
 var nuclearIntake = 50 #How much nuclear material it takes in monthly
-var electricityGeneration = 50 #Per month
+var electricityGeneration = 5050 #Per month, multiplied by the amount of bots working
 var electricityCapacity = 125
 
 onready var playerObject = get_parent().get_node("PlayerNode")
