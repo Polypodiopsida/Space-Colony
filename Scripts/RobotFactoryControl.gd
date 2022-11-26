@@ -19,6 +19,16 @@ func _on_Area_input_event(camera, event, position, normal, shape_idx): #DUMBASS 
 			else:
 				print("Commanding bot to run factory")
 				playerNode.isCommanding = false
+				var commandBots = []
+				var commandBot
+				commandBots = get_tree().get_nodes_in_group("Command Bots")
+				for i in range(0, commandBots.size()):
+					var testingBot = commandBots[i]
+					print("Testing bots. ", testingBot)
+					if testingBot.selected:
+						commandBot = testingBot
+						print("found bot", commandBot)
+						commandBot._found_object(self)
 		elif event.button_index == BUTTON_LEFT && selected:
 			print("test close")
 			selected = false

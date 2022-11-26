@@ -1,5 +1,7 @@
 extends Spatial
 
+signal generatorCommand(generator)
+
 var currentYear = 1
 var currentMonth = 1
 var currentDay = 1

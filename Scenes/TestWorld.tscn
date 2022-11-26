@@ -1,14 +1,18 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/PlayerNode.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/ObjectScenes/RobotFactory.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Grid.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/ObjectScenes/Generator.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Time.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/worldControl.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/ObjectScenes/CameraPost.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Robot Scenes/commanderBot.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Robot Scenes/Generator Bot.tscn" type="PackedScene" id=9]
+
+[sub_resource type="NavigationMesh" id=4]
+vertices = PoolVector3Array( -43.4728, 0.511408, -49.3091, -49.4728, 0.511408, -49.3091, -49.4728, 0.511408, -43.3091, -49.4728, 0.511408, 43.4409, -49.4728, 0.511408, 49.6909, -43.4728, 0.511408, 49.6909, 49.5272, 0.511408, -43.3091, 49.5272, 0.511408, -49.3091, 43.2772, 0.511408, -49.3091, 43.2772, 0.511408, 49.6909, 49.5272, 0.511408, 49.6909, 49.5272, 0.511408, 43.4409, -37.2228, 0.511408, -49.3091, -43.4728, 0.511408, -49.3091, -49.4728, 0.511408, -43.3091, -49.4728, 0.511408, -37.0591, -49.4728, 0.511408, 43.4409, -43.4728, 0.511408, 49.6909, -37.2228, 0.511408, 49.6909, -49.4728, 0.511408, 37.1909, 49.5272, 0.511408, -37.0591, 49.5272, 0.511408, -43.3091, 43.2772, 0.511408, -49.3091, 37.0272, 0.511408, -49.3091, 37.0272, 0.511408, 49.6909, 43.2772, 0.511408, 49.6909, 49.5272, 0.511408, 43.4409, -49.4728, 0.511408, 0.190895, -49.4728, 0.511408, 6.1909, -6.22275, 0.511408, 49.6909, 18.5272, 0.511408, 49.6909, 49.5272, 0.511408, 24.9409, 49.5272, 0.511408, 18.6909, 12.2772, 0.511408, 49.6909, 49.5272, 0.511408, -6.0591, 49.5272, 0.511408, -12.3091, 12.2772, 0.511408, -49.3091, 6.02725, 0.511408, -49.3091, 37.0272, 0.511408, 49.6909, 49.5272, 0.511408, 43.4409, 49.5272, 0.511408, 37.1909, 30.7772, 0.511408, 49.6909, -30.9728, 0.511408, -49.3091, -37.2228, 0.511408, -49.3091, -49.4728, 0.511408, -37.0591, -49.4728, 0.511408, -30.8091, -49.4728, 0.511408, 37.1909, -37.2228, 0.511408, 49.6909, -30.9728, 0.511408, 49.6909, -49.4728, 0.511408, 30.9409, 49.5272, 0.511408, -30.8091, 49.5272, 0.511408, -37.0591, 37.0272, 0.511408, -49.3091, 30.7772, 0.511408, -49.3091, -12.4728, 0.511408, -49.3091, -18.7228, 0.511408, -49.3091, -49.4728, 0.511408, -18.5591, -49.4728, 0.511408, -12.3091, -49.4728, 0.511408, 18.6909, -18.7228, 0.511408, 49.6909, -12.4728, 0.511408, 49.6909, -49.4728, 0.511408, 12.4409, 49.5272, 0.511408, -6.0591, 6.02725, 0.511408, -49.3091, 0.0272484, 0.511408, -49.3091, 49.5272, 0.511408, 0.190895, 49.5272, 0.511408, -12.3091, 49.5272, 0.511408, -18.5591, 18.5272, 0.511408, -49.3091, 12.2772, 0.511408, -49.3091, 30.7772, 0.511408, 49.6909, 49.5272, 0.511408, 37.1909, 49.5272, 0.511408, 30.9409, 24.7772, 0.511408, 49.6909, -49.4728, 0.511408, 24.9409, -49.4728, 0.511408, 30.9409, -30.9728, 0.511408, 49.6909, -24.7228, 0.511408, 49.6909, 49.5272, 0.511408, -30.8091, 30.7772, 0.511408, -49.3091, 24.7772, 0.511408, -49.3091, 49.5272, 0.511408, -24.5591, -24.7228, 0.511408, -49.3091, -30.9728, 0.511408, -49.3091, -49.4728, 0.511408, -30.8091, -49.4728, 0.511408, -24.5591, 49.5272, 0.511408, 0.190895, 0.0272484, 0.511408, -49.3091, -49.4728, 0.511408, 0.190895, -6.22275, 0.511408, 49.6909, 0.0272484, 0.511408, 49.6909, 49.5272, 0.511408, 6.1909, 12.2772, 0.511408, 49.6909, 49.5272, 0.511408, 18.6909, 49.5272, 0.511408, 12.4409, 6.02725, 0.511408, 49.6909, 24.7772, 0.511408, 49.6909, 49.5272, 0.511408, 30.9409, 49.5272, 0.511408, 24.9409, 18.5272, 0.511408, 49.6909, 0.0272484, 0.511408, -49.3091, -6.22275, 0.511408, -49.3091, -49.4728, 0.511408, -6.0591, -49.4728, 0.511408, 0.190895, 6.02725, 0.511408, 49.6909, 49.5272, 0.511408, 12.4409, 49.5272, 0.511408, 6.1909, 0.0272484, 0.511408, 49.6909, -49.4728, 0.511408, 24.9409, -24.7228, 0.511408, 49.6909, -18.7228, 0.511408, 49.6909, -49.4728, 0.511408, 18.6909, 49.5272, 0.511408, -18.5591, 49.5272, 0.511408, -24.5591, 24.7772, 0.511408, -49.3091, 18.5272, 0.511408, -49.3091, -18.7228, 0.511408, -49.3091, -24.7228, 0.511408, -49.3091, -49.4728, 0.511408, -24.5591, -49.4728, 0.511408, -18.5591, -6.22275, 0.511408, -49.3091, -12.4728, 0.511408, -49.3091, -49.4728, 0.511408, -12.3091, -49.4728, 0.511408, -6.0591, -49.4728, 0.511408, 12.4409, -12.4728, 0.511408, 49.6909, -6.22275, 0.511408, 49.6909, -49.4728, 0.511408, 6.1909 )
+polygons = [ PoolIntArray( 2, 1, 0 ), PoolIntArray( 5, 4, 3 ), PoolIntArray( 8, 7, 6 ), PoolIntArray( 11, 10, 9 ), PoolIntArray( 13, 12, 14 ), PoolIntArray( 14, 12, 15 ), PoolIntArray( 17, 16, 18 ), PoolIntArray( 18, 16, 19 ), PoolIntArray( 21, 20, 22 ), PoolIntArray( 22, 20, 23 ), PoolIntArray( 26, 25, 24 ), PoolIntArray( 29, 28, 27 ), PoolIntArray( 31, 30, 32 ), PoolIntArray( 32, 30, 33 ), PoolIntArray( 35, 34, 36 ), PoolIntArray( 36, 34, 37 ), PoolIntArray( 39, 38, 40 ), PoolIntArray( 40, 38, 41 ), PoolIntArray( 43, 42, 44 ), PoolIntArray( 44, 42, 45 ), PoolIntArray( 47, 46, 48 ), PoolIntArray( 48, 46, 49 ), PoolIntArray( 51, 50, 52 ), PoolIntArray( 52, 50, 53 ), PoolIntArray( 55, 54, 56 ), PoolIntArray( 56, 54, 57 ), PoolIntArray( 59, 58, 60 ), PoolIntArray( 60, 58, 61 ), PoolIntArray( 63, 62, 64 ), PoolIntArray( 64, 62, 65 ), PoolIntArray( 67, 66, 68 ), PoolIntArray( 68, 66, 69 ), PoolIntArray( 71, 70, 72 ), PoolIntArray( 72, 70, 73 ), PoolIntArray( 75, 74, 76 ), PoolIntArray( 76, 74, 77 ), PoolIntArray( 79, 78, 80 ), PoolIntArray( 80, 78, 81 ), PoolIntArray( 83, 82, 84 ), PoolIntArray( 84, 82, 85 ), PoolIntArray( 91, 90, 86 ), PoolIntArray( 86, 90, 89 ), PoolIntArray( 86, 89, 88 ), PoolIntArray( 86, 88, 87 ), PoolIntArray( 93, 92, 94 ), PoolIntArray( 94, 92, 95 ), PoolIntArray( 97, 96, 98 ), PoolIntArray( 98, 96, 99 ), PoolIntArray( 101, 100, 102 ), PoolIntArray( 102, 100, 103 ), PoolIntArray( 105, 104, 106 ), PoolIntArray( 106, 104, 107 ), PoolIntArray( 109, 108, 110 ), PoolIntArray( 110, 108, 111 ), PoolIntArray( 113, 112, 114 ), PoolIntArray( 114, 112, 115 ), PoolIntArray( 117, 116, 118 ), PoolIntArray( 118, 116, 119 ), PoolIntArray( 121, 120, 122 ), PoolIntArray( 122, 120, 123 ), PoolIntArray( 125, 124, 126 ), PoolIntArray( 126, 124, 127 ) ]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -20,17 +24,22 @@ albedo_color = Color( 0.431373, 0.431373, 0.431373, 1 )
 [node name="TestWorld" type="Spatial"]
 script = ExtResource( 5 )
 
-[node name="TestMap" type="Spatial" parent="."]
+[node name="Navigation" type="Navigation" parent="."]
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+navmesh = SubResource( 4 )
+
+[node name="TestMap" type="Spatial" parent="Navigation/NavigationMeshInstance"]
 script = ExtResource( 3 )
 
-[node name="groundArea" type="Area" parent="TestMap"]
+[node name="groundArea" type="Area" parent="Navigation/NavigationMeshInstance/TestMap"]
 transform = Transform( 50, 0, 0, 0, 0.05, 0, 0, 0, 50, 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="TestMap/groundArea"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/TestMap/groundArea"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00207973, -0.00794125, 0.00380755 )
 shape = SubResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="TestMap/groundArea/CollisionShape"]
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance/TestMap/groundArea/CollisionShape"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00153473, 1.23611, 1.03763e-05 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
@@ -53,7 +62,7 @@ transform = Transform( 0.25, 0, 0, 0, 5, 0, 0, 0, 0.25, 0, 0, 22.2919 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6477, 2.41615, -39.2371 )
 
 [node name="commandBot" parent="." groups=["B/R Bots", "Camera Bots", "Command Bots"] instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.256, 2.13839, -3.61284 )
+transform = Transform( -0.985659, 0, 0.168747, 0, 1, 0, -0.168747, 0, -0.985659, 35.256, 2.13839, -3.61284 )
 
 [node name="generatorBot" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1319, -35.6395 )

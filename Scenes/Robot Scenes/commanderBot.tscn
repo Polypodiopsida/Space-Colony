@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/commanderBot.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/CameraControl.gd" type="Script" id=2]
 
 [sub_resource type="CylinderShape" id=1]
 
 [sub_resource type="CylinderMesh" id=2]
+
+[sub_resource type="CubeMesh" id=3]
 
 [node name="commandBot" type="Spatial"]
 script = ExtResource( 1 )
@@ -17,6 +20,10 @@ shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="KinematicBody/CollisionShape"]
 mesh = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="KinematicBody/CollisionShape/MeshInstance"]
+transform = Transform( 0.716196, 0.0139754, 0, -0.00168161, 0.34471, 0, 0, 0, 0.593042, 0.452528, 0.521737, 0 )
+mesh = SubResource( 3 )
 
 [node name="Panel" type="Panel" parent="."]
 visible = false
@@ -71,5 +78,9 @@ margin_top = 150.0
 margin_right = 262.0
 margin_bottom = 239.0
 text = "Current Task: "
+
+[node name="ClippedCamera" type="ClippedCamera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.97896 )
+script = ExtResource( 2 )
 
 [connection signal="input_event" from="KinematicBody" to="." method="_on_KinematicBody_input_event"]
